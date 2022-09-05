@@ -1,0 +1,1342 @@
+@use 'variables'
+@use 'mixins'
+    
+// RESET
+* 
+    margin: 0
+    padding: 0
+    -webkit-box-sizing: border-box
+    box-sizing: border-box
+
+// CONTENT    
+body 
+    background-color: variables.$background-color    
+    font-family: 'Open Sans', sans-serif
+    letter-spacing: 1px
+    overflow-x: hidden
+    position: relative !important
+ 
+    a
+        text-decoration: none    
+
+    img 
+        width: 100% 
+        height: auto
+        vertical-align: middle
+
+    ::-webkit-input-placeholder
+        color: variables.$secundary-color-purple
+        font-family: 'Open Sans', sans-serif
+
+    :-moz-placeholder 
+        color: variables.$secundary-color-purple 
+        font-family: 'Open Sans', sans-serif
+
+    ::-moz-placeholder 
+        color: variables.$secundary-color-purple 
+        font-family: 'Open Sans', sans-serif
+
+    :-ms-input-placeholder 
+        color: variables.$secundary-color-purple 
+        font-family: 'Open Sans', sans-serif   
+
+    @keyframes rotating
+        100%
+            -webkit-transform: rotateZ(360deg)
+            -ms-transform: rotate(360deg)
+            transform: rotateZ(360deg)
+
+    @-webkit-keyframes rotating
+        100%
+            -webkit-transform: rotateZ(360deg)
+            -ms-transform: rotate(360deg)
+            transform: rotateZ(360deg) 
+
+    @keyframes leftright
+        0%
+            -webkit-transform: scale(1.1)
+            -ms-transform: scale(1.1)
+            transform: scale(1.1)
+
+        25%
+            -webkit-transform: scale(0.8)
+            -ms-transform: scale(0.8)
+            transform: scale(0.8)
+
+        50%
+            -webkit-transform: scale(1.1)
+            -ms-transform: scale(1.1§)
+            transform: scale(1.1)
+
+        100%
+            -webkit-transform: scale(1.1)
+            -ms-transform: scale(1.1)
+            transform: scale(1.1)
+
+    @-webkit-keyframes leftright
+        0%
+            -webkit-transform: scale(1.1)
+            -ms-transform: rotate(1.1)
+            transform: scale(1.1)
+
+        25%
+            -webkit-transform: scale(0.8)
+            -ms-transform: rotate(0.8)
+            transform: scale(0.8)
+
+        50%
+            -webkit-transform: scale(1.1)
+            -ms-transform: rotate(1.1)
+            transform: scale(1.1)
+
+        100%
+            -webkit-transform: scale(1.1)
+            -ms-transform: rotate(1.1)
+            transform: scale(1.1)  
+
+    @keyframes degrees   
+        0%
+            opacity: 1
+    
+        49.9% 
+            -webkit-transform: scale(1.2)
+            -ms-transform: rotate(1.2)
+            transform: scale(1.2)
+            opacity: 0
+
+        50%
+            -webkit-transform: scale(1)
+            -ms-transform: rotate(1)
+            transform: scale(1)
+            opacity: 1
+
+        100%
+            -webkit-transform: scale(1)
+            -ms-transform: rotate(1)
+            transform: scale(1)
+            opacity: 1
+
+    @-webkit-keyframes degrees  
+        0%
+            opacity: 1
+    
+        49.9% 
+            -webkit-transform: scale(1.2)
+            -ms-transform: rotate(1.2)
+            transform: scale(1.2)
+            opacity: 0
+
+        50%
+            -webkit-transform: scale(1)
+            -ms-transform: rotate(1)
+            transform: scale(1)
+            opacity: 1
+
+        100%
+            -webkit-transform: scale(1)
+            -ms-transform: rotate(1)
+            transform: scale(1)
+            opacity: 1
+
+    @keyframes anime
+        0%
+            transform: translate(0, 0px) rotateZ(0deg)
+            -webkit-transform: translate(0, 0px) rotateZ(0deg)
+            
+        50%
+            transform: translate(20px, 100px) rotateZ(270deg)
+            -webkit-transform: translate(20px, 100px) rotateZ(270deg)
+
+        100%
+            transform: translate(20px, 100px) rotateZ(360deg) 
+            -webkit-transform: translate(20px, 100px) rotateZ(360deg) 
+
+    @-webkit-keyframes anime        
+        0%
+            transform: translate(0, 0px) rotateZ(0deg)
+            -webkit-transform: translate(0, 0px) rotateZ(0deg)
+            
+        75%
+            transform: translate(20px, 100px) rotateZ(270deg)
+            -webkit-transform: translate(20px, 100px) rotateZ(270deg)
+
+        100%
+            transform: translate(20px, 100px) rotateZ(360deg) 
+            -webkit-transform: translate(20px, 100px) rotateZ(360deg) 
+
+    @keyframes horizontal
+        0% 
+            transform: translate(0)
+            -webkit-transform: translate(0)
+
+        25% 
+            transform: translate(50px)
+            -webkit-transform: translate(50px)
+
+        50% 
+            transform: translate(0)
+            -webkit-transform: translate(0)
+
+        75% 
+            transform: translate(50px)
+            -webkit-transform: translate(50px)
+
+        100% 
+            transform: translate(0)
+            -webkit-transform: translate(0)
+
+    @-webkit-keyframes horizontal              
+        0% 
+            transform: translate(0)
+            -webkit-transform: translate(0)
+
+        25% 
+            transform: translate(20rem)
+            -webkit-transform: translate(20rem)
+
+        50% 
+            transform: translate(0)
+            -webkit-transform: translate(0)
+
+        75% 
+            transform: translate(20rem)
+            -webkit-transform: translate(20rem)
+
+        100% 
+            transform: translate(0)
+            -webkit-transform: translate(0)
+
+    @keyframes disappear
+        0% 
+            transform: translateX(0%) 
+            -webkit-transform: translateX(0%) 
+            opacity: 4
+
+        100% 
+            transform: translateX(-100%) 
+            -webkit-transform: translateX(-100%) 
+            opacity: 0 
+
+    @-webkit-keyframes disappear          
+        0% 
+            transform: translateX(0%) 
+            -webkit-transform: translateX(0%)
+            opacity: 4
+
+        100% 
+            transform: translateX(-100%) 
+            -webkit-transform: translateX(-100%) 
+            opacity: 0 
+            
+    .animate
+        opacity: 0
+        -webkit-animation-fill-mode: forwards
+        animation-fill-mode: forwards
+        -webkit-animation-delay: 0.25s
+        animation-delay: 0.25s
+        -webkit-animation-duration: 1s
+        animation-duration: 1s
+        -webkit-animation-fill-mode: both
+        animation-fill-mode: both
+
+    .animateOne 
+        -webkit-animation: animateOne 2s 1 forwards
+        animation: animateOne 2s 1 forwards
+
+    .animateTwo
+        -webkit-animation: animateTwo 2s 1 forwards    
+        animation: animateTwo 2s 1 forwards    
+
+    @keyframes animateOne 
+        0% 
+            opacity: 0
+            -webkit-transform: translateY(-100px)
+            -ms-transform: translateY(-100px)
+            transform: translateY(-100px)
+
+        100% 
+            opacity: 1
+            -webkit-transform: translateY(0)
+            -ms-transform: translateY(0)
+            transform: translateY(0)
+
+    @-webkit-keyframes animateOne  
+        0% 
+            opacity: 0
+            -webkit-transform: translateY(-100px)
+            -ms-transform: translateY(-100px)
+            transform: translateY(-100px)
+
+        100% 
+            opacity: 1
+            -webkit-transform: translateY(0)
+            -ms-transform: translateY(0)
+            transform: translateY(0)       
+
+    @keyframes animateTwo
+        0% 
+            opacity: 0
+            -webkit-transform: translateY(100px)
+            -ms-transform: translateY(100px)
+            transform: translateY(100px)
+
+        100% 
+            opacity: 1
+            -webkit-transform: translateY(0)
+            -ms-transform: translateY(0)
+            transform: translateY(0)  
+
+    @-webkit-keyframes animateTwo  
+        0% 
+            opacity: 0
+            -webkit-transform: translateY(100px)
+            -ms-transform: translateY(100px)
+            transform: translateY(100px)
+
+        100% 
+            opacity: 1
+            -webkit-transform: translateY(0)
+            -ms-transform: translateY(0)
+            transform: translateY(0)      
+
+    .animation-left    
+        -webkit-animation: animationleft
+        animation: animationleft
+        -webkit-animation-duration: 3s
+        animation-duration: 3s
+        -webkit-animation-fill-mode: forwards
+        animation-fill-mode: forwards
+        position: relative
+        @include mixins.tablet
+            position: unset 
+
+    @keyframes animationleft
+        0%
+            left: -500px
+        100%
+            left: 0            
+
+    @-webkit-keyframes animationleft   
+        0%
+            left: -500px
+        100%
+            left: 0       
+
+    .animation-right   
+        -webkit-animation: animationright
+        animation: animationright
+        -webkit-animation-duration: 3s
+        animation-duration: 3s
+        -webkit-animation-fill-mode: forwards
+        animation-fill-mode: forwards
+        position: relative
+        @include mixins.tablet
+            position: unset 
+
+    @keyframes animationright 
+        0%
+            right: -500px
+        100%
+            right: 0  
+
+    @-webkit-keyframes animationright      
+        0%
+            right: -500px
+        100%
+            right: 0     
+
+// HEADER    
+.header
+    width: 100%
+    z-index: 100
+    background-color: variables.$background-color
+    height: 5rem
+    z-index: 100
+    @include mixins.tablet    
+        height: 3.5rem
+        position: fixed
+
+    &-nav 
+        @include mixins.space-between
+        @include mixins.align-center
+        padding: 1rem 5% 0 5%
+        @include mixins.container-desktop
+        @include mixins.flex
+        @include mixins.tablet
+            padding: 0
+            -webkit-box-align: initial
+            -ms-flex-align: initial
+            align-items: initial
+
+        &-logo 
+            @include mixins.tablet 
+                padding: .5rem 0 0 1rem
+                z-index: 100 
+
+            img 
+                width: 12rem
+                @include mixins.tablet  
+                    width: 10rem
+
+        &-hamburger
+            display: none
+
+            @include mixins.tablet
+                display: block
+                position: absolute
+                cursor: pointer
+                right: 0.5rem
+                top: 1.8rem
+                -webkit-transform: translate(-5%, -50%)
+                -ms-transform: translate(-5%, -50%)
+                transform: translate(-5%, -50%)
+                z-index: 10
+                -webkit-transition: all 0.7s ease
+                -o-transition: all 0.7s ease
+                transition: all 0.7s ease       
+
+            div
+                width: 30px
+                height: 3px
+                background-color: variables.$text-color-black
+                margin: 5px
+                -webkit-transition: all 0.3s ease
+                -o-transition: all 0.3s ease
+                transition: all 0.3s ease
+
+        &-links
+            @include mixins.tablet
+                position: fixed
+                background: variables.$background-color
+                height: 120vh
+                width: 100%
+                clip-path: circle(50px at 90% -20%)
+                -webkit-clip-path: circle(50px at 90% -10%)
+                -webkit-transition: all 1s ease-out
+                -o-transition: all 1s ease-out
+                transition: all 1s ease-out
+                pointer-events: none
+
+            ul 
+                list-style: none
+                @include mixins.align-center
+                @include mixins.flex
+                @include mixins.tablet
+                    -webkit-box-orient: vertical
+                    -webkit-box-direction: normal
+                    -ms-flex-direction: column
+                    flex-direction: column
+                    padding-top: 5rem
+
+                li 
+                    margin-left: 3rem
+                    font-size: 1rem
+                    @include mixins.tablet
+                        font-size: 1.3rem
+                        margin-left: 0
+                        margin-top: 2.5rem
+
+                    a
+                        color: variables.$text-color-black
+
+                        &.active
+                            font-weight: 600
+
+                        &.active-blue
+                            color: variables.$primary-color-blue
+
+                        &.active-pink
+                            color: variables.$primary-color-pink
+
+                        &.active-green
+                            color: variables.$primary-color-green     
+
+
+            &.open
+                @include mixins.tablet
+                    clip-path: circle(100rem at 90% -10%)
+                    -webkit-clip-path: circle(100rem at 90% -10%)
+                    pointer-events: all        
+            
+                li 
+                    @include mixins.tablet
+                        opacity: 0    
+
+                    &:nth-child(1)
+                        @include mixins.tablet
+                            -webkit-transition: all 0.5s ease 0.2s
+                            -o-transition: all 0.5s ease 0.2s
+                            transition: all 0.5s ease 0.2s
+                        
+                    &:nth-child(2)
+                        @include mixins.tablet
+                            -webkit-transition: all 0.5s ease 0.4s
+                            -o-transition: all 0.5s ease 0.4s
+                            transition: all 0.5s ease 0.4s
+                    
+                    &:nth-child(3)
+                        @include mixins.tablet
+                            -webkit-transition: all 0.5s ease 0.6s 
+                            -o-transition: all 0.5s ease 0.6s 
+                            transition: all 0.5s ease 0.6s     
+                
+                    &.fade
+                        @include mixins.tablet
+                            opacity: 1
+
+    .toggle 
+        .hamburger-line-one
+            -webkit-transform: rotate(-45deg) translate(-5px,6px)
+            -ms-transform: rotate(-45deg) translate(-5px,6px)
+            transform: rotate(-45deg) translate(-5px,6px)
+
+        .hamburger-line-two
+            -webkit-transition: all 0.7s ease
+            -o-transition: all 0.7s ease
+            transition: all 0.7s ease
+            width:0
+
+        .hamburger-line-three
+            -webkit-transform: rotate(45deg) translate(-5px,-6px)
+            -ms-transform: rotate(45deg) translate(-5px,-6px)
+            transform: rotate(45deg) translate(-5px,-6px)
+
+// FOOTER
+footer 
+    > div
+        @include mixins.container-desktop
+        @include mixins.flex
+        @include mixins.space-between
+        padding: 2rem 5%
+        @include mixins.tablet
+            padding: 2rem 1rem
+        @include mixins.smartphone
+            @include mixins.column-reverse
+            @include mixins.align-center 
+
+        
+    p, li
+        color: variables.$text-color-grey
+        font-size: 0.9rem   
+
+    ul 
+        @include mixins.flex
+        list-style: none 
+        @include mixins.smartphone
+            padding-bottom: 2rem  
+
+        li  
+            margin-left: 3rem
+            cursor: pointer
+            @include mixins.smartphone
+                margin-left: 1.5rem
+                margin-right: 1.5rem
+
+// HOME      
+.home 
+    position: relative
+    padding: 2rem 0 6rem 0
+    @include mixins.tablet
+        padding: 6rem 0
+
+    @include mixins.smartphone
+        padding: 0 0 4rem 0
+
+    &-wrapper 
+        @include mixins.container-desktop
+        @include mixins.padding-big-desktop
+        @include mixins.tablet
+            padding-left: 0
+            padding-right: 0
+            @include mixins.container-mobile
+            > div:nth-child(2)
+                @include mixins.column-reverse
+
+        &-box 
+            @include mixins.flex
+            @include mixins.wrap
+            padding: 6rem 0
+            @include mixins.tablet
+                width: 80%
+                margin: auto
+            @include mixins.smartphone
+                width: 100%
+                padding: 3.5rem 0
+
+            > div 
+                width: 50%
+                z-index: 50
+                @include mixins.tablet
+                    width: 100%
+
+            &-left
+                padding-right: 1.5rem
+                @include mixins.tablet
+                    padding-right: 0  
+
+            &-right
+                padding-left: 1.5rem 
+                @include mixins.tablet
+                    padding-left: 0
+
+            &-text 
+                position: relative 
+                @include mixins.tablet
+                    padding-left: 1rem
+                    padding-right: 1rem    
+
+                &-content 
+                    position: absolute
+                    -webkit-transform: translateY(-50%)
+                    -ms-transform: translateY(-50%)
+                    transform: translateY(-50%)
+                    top: 50%
+                    @include mixins.tablet
+                        position: relative
+                        -webkit-transform: unset
+                        -ms-transform: unset
+                        transform: unset
+                        top: unset
+
+                    h1, h2
+                        font-size: 2rem
+                        color: variables.$text-color-black
+                        padding-bottom: 1rem
+                        @include mixins.tablet
+                            padding-top: 3rem
+                            font-size: 1.8rem
+
+                    h1, h2, a
+                        text-transform: uppercase
+                        font-weight: 700
+
+                    p 
+                        font-size: 1.2rem
+                        color: variables.$text-color-grey  
+                        line-height: 1.6
+                        padding-bottom: 2.2rem  
+
+                    a 
+                        font-size: 1.1rem
+                        display: inline-block
+                        background-color: variables.$background-color
+                        padding: .7rem 0
+                        -webkit-transition: .4s
+                        -o-transition: .4s
+                        transition: .4s
+                        text-align: center
+                        @include mixins.btn
+
+                    &-blue         
+                        color: variables.$primary-color-blue
+                        border: 3px solid variables.$primary-color-blue 
+                        &:hover
+                            -webkit-box-shadow: 7px 10px variables.$primary-color-blue
+                            box-shadow: 7px 10px variables.$primary-color-blue   
+
+                    &-pink
+                        color: variables.$primary-color-pink
+                        border: .2rem solid variables.$primary-color-pink  
+                        &:hover
+                            -webkit-box-shadow: 7px 10px variables.$primary-color-pink
+                            box-shadow: 7px 10px variables.$primary-color-pink
+
+                    &-green
+                        color: variables.$primary-color-green
+                        border: .2rem solid variables.$primary-color-green   
+                        &:hover
+                            -webkit-box-shadow: 7px 9px variables.$primary-color-green  
+                            box-shadow: 7px 9px variables.$primary-color-green          
+
+                &-right
+                    left: 1.5rem
+                    @include mixins.tablet
+                        left: 0
+
+                &-left 
+                    right: 1.5rem
+                    text-align: right
+                    @include mixins.tablet
+                        right: 0
+                        text-align: left
+                    
+    &-geometric 
+        position: absolute
+        @include mixins.tablet
+            display: none
+
+    &-triangle-pink
+        top: 12%
+        right: 5%
+        -webkit-animation: rotating 15s linear infinite
+        animation: rotating 15s linear infinite
+
+        img 
+            width: 5rem
+
+    &-square-purple 
+        top: 10%
+        left: 4%
+        -webkit-animation: anime 8s infinite alternate-reverse linear
+        animation: anime 8s infinite alternate-reverse linear
+
+        img
+            width: 3.5rem 
+
+    &-triangle-blue  
+        top: 28%
+        left: 8%
+        -webkit-animation: rotating 20s linear infinite 
+        animation: rotating 20s linear infinite 
+
+        img
+            width: 6rem   
+
+    &-square-green  
+        top: 30%
+        right: 13%
+        -webkit-animation: anime 5s infinite alternate-reverse linear
+        animation: anime 5s infinite alternate-reverse linear
+
+        img
+            width: 4.5rem  
+
+    &-circle-yellow
+        top: 45%
+        left: 3%
+        -webkit-animation: degrees 4s linear infinite
+        animation: one 4s degrees infinite
+    
+        img
+            width: 3rem                          
+        
+    &-circle-blue
+        top: 50%    
+        right: 3%
+        -webkit-animation: rotating 10s linear infinite
+        animation: rotating 10s linear infinite
+
+        img
+            width: 5.5rem         
+
+    &-square-pink
+        top: 58%
+        right: 20%
+        -webkit-animation: disappear 3s alternate-reverse infinite
+        animation: disappear 3s alternate-reverse infinite
+
+        img
+            width: 6rem    
+
+    &-circle-green
+        bottom: 28%
+        left: 9%
+        -webkit-animation: leftright 5s linear infinite
+        animation: leftright 5s linear infinite
+
+        img
+            width: 6.5rem  
+
+    &-rectangle-purple
+        bottom: 15%
+        left: 2%
+        -webkit-animation: rotating 10s linear infinite
+            animation: rotating 10s linear infinite
+
+        img
+            width: 5rem 
+
+    &-middle-circle-yellow
+        bottom: 18%
+        right: 0
+        -webkit-animation: degrees 5s linear infinite
+        animation: one 5s degrees infinite
+
+        img
+            width: 4.5rem  
+                                                        
+// AREA 
+.area
+    min-height: 100vh
+    
+    &-banner
+        position: relative   
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center
+        height: 28rem 
+        @include mixins.smartphone
+            height: 22rem
+
+        &-geometric 
+            position: absolute
+
+        &-pinkbig
+            bottom: -6rem
+            right: 12rem
+            @include mixins.tablet 
+                bottom: -4.5rem
+                right: 7rem
+            @include mixins.smartphone
+                bottom: -2.5rem
+                right: 5rem   
+
+            img
+                width: 12rem
+                @include mixins.tablet 
+                    width: 9rem
+                @include mixins.smartphone
+                    width: 5rem    
+
+        &-pinksmall
+            bottom: -15rem
+            right: 3rem
+            @include mixins.tablet 
+                bottom: -10.5rem
+                right: 1rem
+            @include mixins.smartphone
+                bottom: -6.5rem     
+
+            img
+                width: 9rem     
+                @include mixins.tablet 
+                    width: 6rem   
+                @include mixins.smartphone
+                    width: 4rem
+
+        &-bluebig
+            bottom: -7.3rem
+            right: 3rem
+            @include mixins.tablet 
+                bottom: -5rem
+                right: 1rem
+            @include mixins.smartphone
+                bottom: -2.8rem
+
+            img
+                width: 13rem
+                @include mixins.tablet 
+                    width: 9rem
+                @include mixins.smartphone
+                    width: 5rem    
+
+        &-bluesmall
+            bottom: -15rem
+            right: 11rem
+            @include mixins.tablet 
+                bottom: -10.5rem
+                right: 6rem
+            @include mixins.smartphone
+                bottom: -5.5rem
+                right: 4rem
+
+            img
+                width: 8rem     
+                @include mixins.tablet 
+                    width: 6rem   
+                @include mixins.smartphone
+                    width: 3rem
+
+        &-greenbig
+            bottom: -6rem
+            right: 9rem
+            @include mixins.tablet 
+                bottom: -4.5rem
+                right: 5rem
+            @include mixins.smartphone
+                bottom: -2.5rem
+                right: 3rem   
+
+            img
+                width: 12rem
+                @include mixins.tablet 
+                    width: 9rem
+                @include mixins.smartphone
+                    width: 5rem    
+
+        &-greensmall
+            bottom: -14.5rem
+            right: 3rem
+            @include mixins.tablet 
+                bottom: -10.5rem
+                right: 1rem
+            @include mixins.smartphone
+                bottom: -6rem     
+
+            img
+                width: 7.5rem     
+                @include mixins.tablet 
+                    width: 5.5rem   
+                @include mixins.smartphone
+                    width: 3rem            
+
+    &-title
+        padding-top: 7rem
+        @include mixins.container-desktop
+        @include mixins.padding-small-desktop
+        @include mixins.smartphone
+            padding-top: 5rem
+        @include mixins.tablet
+            @include mixins.padding-mobile    
+
+        h1
+            font-size: 3.6rem 
+            color: variables.$text-color-black
+            font-weight: 700
+            text-transform: uppercase
+            line-height: 1.2
+            @include mixins.tablet
+                font-size: 2.9rem
+            @include mixins.smartphone
+                font-size: 2.5rem    
+
+        &-line  
+            height: .6rem
+            margin: .6rem 0 0 .3rem
+            @include mixins.smartphone
+                height: .4rem
+                margin: .3rem 0 0 .3rem
+
+        &-pink 
+            width: 13.1rem
+            background-color: variables.$primary-color-pink   
+            -webkit-animation: opacitypink 2s forwards
+                    animation: opacitypink 2s forwards  
+            @keyframes opacitypink
+                0% 
+                    width: 0
+                    opacity: 0
+        
+                100% 
+                    width: 13.1rem
+                    opacity: 1  
+            @include mixins.tablet 
+                width: 10.6rem
+                @keyframes opacitypink
+                    0% 
+                        width: 0
+                        opacity: 0
+            
+                    100% 
+                        width: 10.6rem
+                        opacity: 1  
+            @include mixins.smartphone
+                width: 9.2rem
+                @keyframes opacitypink
+                    0% 
+                        width: 0
+                        opacity: 0
+            
+                    100% 
+                        width: 9.2rem
+                        opacity: 1 
+
+        &-blue
+            width: 14.3rem
+            background-color: variables.$primary-color-blue 
+            -webkit-animation: opacityblue 2s forwards
+            animation: opacityblue 2s forwards 
+            @keyframes opacityblue
+                0% 
+                    width: 0
+                    opacity: 0
+            
+                100% 
+                    width: 14.3rem
+                    opacity: 1   
+            @include mixins.tablet 
+                width: 11.5rem
+                @keyframes opacityblue
+                    0% 
+                        width: 0
+                        opacity: 0
+                
+                    100% 
+                        width: 11.5rem
+                        opacity: 1   
+            @include mixins.smartphone
+                width: 10rem 
+                @keyframes opacityblue
+                    0% 
+                        width: 0
+                        opacity: 0
+                
+                    100% 
+                        width: 10rem 
+                        opacity: 1   
+
+        &-green
+            width: 26.9rem
+            background-color: variables.$primary-color-green
+            -webkit-animation: opacitygreen 2s forwards
+            animation: opacitygreen 2s forwards
+            @keyframes opacitygreen
+                0% 
+                    width: 0
+                    opacity: 0
+                
+                100% 
+                    width: 26.9rem
+                    opacity: 1 
+            @include mixins.tablet 
+                width: 21.7rem
+                @keyframes opacitygreen
+                    0% 
+                        width: 0
+                        opacity: 0
+                    
+                    100% 
+                        width: 21.7rem
+                        opacity: 1 
+            @include mixins.smartphone
+                width: 18.8rem  
+                @keyframes opacitygreen
+                    0% 
+                        width: 0
+                        opacity: 0
+                    
+                    100% 
+                        width: 18.8rem 
+                        opacity: 1              
+
+    &-content
+        padding-top: 7rem
+        padding-bottom: 11rem
+        @include mixins.container-desktop
+        @include mixins.padding-small-desktop
+        @include mixins.flex
+        @include mixins.wrap
+        @include mixins.justify-center
+        @include mixins.tablet
+            @include mixins.padding-mobile
+        @include mixins.smartphone
+            padding-top: 4rem
+            padding-bottom: 6rem
+            
+        &-box 
+            margin: .9rem
+            @include mixins.tablet
+                margin: .5rem
+
+            &-background
+                width: 15rem
+                height: 15rem
+                padding: 2rem 0.5rem 
+                text-align: center
+                -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+                -webkit-transition: .3s ease-in-out all
+                -o-transition: .3s ease-in-out all
+                transition: .3s ease-in-out all
+                @include mixins.tablet
+                    width: 12rem
+                    height: 12rem
+                    padding: 1rem 0.5rem
+                @include mixins.smartphone    
+                    width: 9rem
+                    height: 9rem
+
+                &:hover
+                    -webkit-transform: scale(1.1)
+                    -ms-transform: scale(1.1)
+                    transform: scale(1.1)       
+
+                img
+                    width: 8rem
+                    @include mixins.tablet
+                        width: 6.5rem
+                    @include mixins.smartphone
+                        width: 4.5rem    
+
+                p
+                    color: variables.$text-color-white
+                    font-size: 1.3rem
+                    text-transform: uppercase
+                    padding-top: 1rem   
+                    @include mixins.tablet
+                        font-size: 1.1rem
+                    @include mixins.smartphone
+                        font-size: .9rem  
+                        padding-top: .5rem  
+
+            &-pink 
+                background-color: variables.$primary-color-pink 
+
+            &-blue
+                background-color: variables.$primary-color-blue 
+
+            &-green
+                background-color: variables.$primary-color-green       
+    
+// TOOL
+.tool 
+    min-height: 100vh
+
+    &-title
+        @include mixins.container-desktop
+        @include mixins.padding-small-desktop
+        padding-top: 8rem
+        @include mixins.tablet
+            @include mixins.padding-mobile
+        @include mixins.smartphone
+            padding-top: 8rem    
+
+        h1
+            color: variables.$text-color-black
+            font-size: 3rem
+            font-weight: 700
+            text-transform: uppercase
+            @include mixins.tablet
+                font-size: 2.5rem
+            @include mixins.smartphone
+                font-size: 1.9rem    
+
+    &-pink 
+        h1 
+            span
+                border-bottom: .5rem solid variables.$primary-color-pink 
+                @include mixins.smartphone
+                    border-bottom: .4rem solid variables.$primary-color-pink 
+
+    &-blue
+        h1 
+            span
+                border-bottom: .5rem solid variables.$primary-color-blue 
+                @include mixins.smartphone
+                    border-bottom: .4rem solid variables.$primary-color-blue               
+
+    &-green
+        h1 
+            span
+                border-bottom: .5rem solid variables.$primary-color-green
+                @include mixins.smartphone
+                    border-bottom: .4rem solid variables.$primary-color-green                            
+
+    &-content 
+        @include mixins.container-desktop
+        @include mixins.padding-small-desktop
+        @include mixins.flex
+        @include mixins.wrap
+        @include mixins.justify-center
+        padding-top: 7rem
+        padding-bottom: 11.5rem
+        @include mixins.tablet
+            @include mixins.container-mobile
+        @include mixins.smartphone
+            padding-top: 4rem
+            padding-bottom: 6.5rem   
+            padding-left: 0
+            padding-right: 0     
+
+        &-box
+            margin: .7rem
+            background-color: variables.$background-color
+            @include mixins.smartphone
+                margin: .7rem 0    
+
+            &-background
+                @include mixins.flex
+                @include mixins.wrap
+                width: 32rem
+                height: 15rem
+                -webkit-box-shadow: 0px 4px 20px 4px rgba(0, 0, 0, 0.10)
+                box-shadow: 0px 4px 20px 4px rgba(0, 0, 0, 0.10)
+                -webkit-transition: .3s ease-in-out all
+                -o-transition: .3s ease-in-out all
+                transition: .3s ease-in-out all
+                @include mixins.smartphone
+                    width: 100%
+                    height: unset  
+
+                &:hover    
+                    -webkit-transform: translateY(-10px)
+                    -ms-transform: translateY(-10px)
+                    transform: translateY(-10px)
+                    @include mixins.tablet
+                        -webkit-transform: none
+                        -ms-transform: none
+                        transform: none     
+
+                &-image
+                    @include mixins.flex
+                    @include mixins.justify-center
+                    @include mixins.align-center
+                    width: 10rem
+                    @include mixins.smartphone
+                        width: 25%
+
+                    img
+                        width: 7rem
+                        @include mixins.smartphone
+                            width: 80%           
+
+                &-text
+                    width: 22rem 
+                    padding: 1.5rem
+                    @include mixins.smartphone
+                        width: 75%
+                        padding: 1.5rem
+
+                    p, small
+                        color: variables.$text-color-grey
+
+                    h2
+                        font-size: 1.3rem
+                        font-weight: 600
+                        @include mixins.smartphone
+                            font-size: 1.1rem
+
+                    p
+                        font-size: 1rem 
+                        padding: 1rem 0 
+                        line-height: 1.5
+
+                    small
+                        font-size: .9rem    
+
+                &-pink 
+                    border-left: .3rem solid variables.$primary-color-pink
+                    @include mixins.smartphone
+                        border-left: .2rem solid variables.$primary-color-pink
+
+                    h2
+                        color: variables.$primary-color-pink
+
+
+                &-blue
+                    border-left: .3rem solid variables.$primary-color-blue
+                    @include mixins.smartphone
+                        border-left: .2rem solid variables.$primary-color-blue
+
+                    h2
+                        color: variables.$primary-color-blue
+
+                &-green
+                    border-left: .3rem solid variables.$primary-color-green 
+                    @include mixins.smartphone
+                        border-left: .2rem solid variables.$primary-color-green 
+
+                    h2
+                        color: variables.$primary-color-green                
+
+// MODAL
+.modal 
+    display: none
+    position: fixed
+    z-index: 100
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    overflow: auto
+    background-color: rgba(14, 14, 14, 0.3)
+
+    &-wrapper
+        position: absolute
+        -webkit-transform: translateY(-50%)
+        -ms-transform: translateY(-50%)
+        transform: translateY(-50%)
+        left: 0
+        right: 0
+        margin: auto
+        top: 50%
+        @include mixins.smartphone
+            position: relative
+            -webkit-transform: unset
+            -ms-transform: unset
+            transform: unset
+            top: 0
+
+        &-content 
+            background-color: variables.$text-color-white
+            margin: auto
+            padding: 2.5rem
+            width: 44rem
+            height: 36rem
+            @include mixins.tablet
+                width: 38rem
+                overflow-y: scroll
+            @include mixins.smartphone
+                width: 100%  
+                min-height: 50rem
+                padding: 1rem  
+
+            &-close 
+                text-align: right
+
+                img
+                    width: 1.7rem
+                    cursor: pointer
+                    @include mixins.tablet
+                        width: 1.5rem
+
+            &-text 
+                padding: 0 1.5rem 
+                @include mixins.smartphone
+                    padding: 0 0.5rem
+
+                span
+                    border-bottom: .4rem solid variables.$secundary-color-purple
+                    @include mixins.smartphone
+                        border-bottom: .3rem solid variables.$secundary-color-purple     
+
+                h2
+                    color: variables.$text-color-black
+                    font-size: 2rem  
+                    font-weight: 700
+                    text-transform: uppercase
+                    @include mixins.tablet
+                        font-size: 1.8rem
+
+                p 
+                    color: variables.$text-color-grey
+                    font-size: 1.2rem
+                    line-height: 1.6    
+                    padding-top: 2.5rem
+
+                a 
+                    color: variables.$secundary-color-purple
+                    font-weight: 700     
+                    padding-top: 3rem 
+                    margin: auto
+                    width: 28rem
+                    text-align: center
+                    @include mixins.tablet
+                        width: 100%
+
+                    input, textarea, button
+                        font-size: 1.1rem
+                        font-weight: 700   
+                        color: variables.$secundary-color-purple
+                        border: 3px solid variables.$secundary-color-purple
+                        background-color: transparent
+
+                    input, textarea 
+                        margin: .8rem 0
+                        padding: 1rem
+                        width: 100%
+                        outline: none
+                        font-family: 'Open Sans', sans-serif
+
+                        &:focus
+                            border-left: 0 !important
+                            border-right: 0 !important
+                            border-top: 0 !important    
+
+                    textarea 
+                        height: 7rem   
+                        resize: none 
+
+                    button
+                        text-transform: uppercase
+                        padding: 0.9rem 0 0.7rem 0
+                        -webkit-transition: 0.4s
+                        -o-transition: 0.4s
+                        transition: 0.4s
+                        cursor: pointer
+                        margin-top: 2rem
+                        @include mixins.btn
+
+                        &:hover
+                            -webkit-box-shadow: 7px 9px variables.$secundary-color-purple
+                            box-shadow: 7px 9px variables.$secundary-color-purple
